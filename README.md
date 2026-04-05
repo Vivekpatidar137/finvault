@@ -1,50 +1,51 @@
 # FinVault — Finance Dashboard
 
-A sleek, dark-themed personal finance dashboard built with **React 18**, **Redux Toolkit**, and **Tailwind CSS**.
+A sleek, dark-themed personal finance dashboard to track income, expenses, and investments.
+
+🔗 **Live Demo** → [finvault-io.vercel.app](https://finvault-io.vercel.app)
 
 ---
 
 ## ✨ Features
 
-### Core
-- **Dashboard Overview** — Summary cards (balance, income, expenses, investments), monthly cash flow area chart, spending donut chart, recent transactions
-- **Transactions Page** — Full table with search, filter by type/category/date range, sort (date/amount asc/desc), CSV export
-- **Insights Page** — Top spending category, savings rate, expense ratio, month-over-month comparison bar charts, smart observations
-- **Role-Based UI** — Toggle between `Viewer` (read-only) and `Admin` (add, edit, delete transactions) via the sidebar switcher
-
-### Optional Enhancements Included
-- 💾 **Data persistence** — Transactions and role are saved to `localStorage`
-- 📤 **CSV Export** — Download filtered transactions as a CSV file
-- ✨ **Animations** — Staggered fade-up cards, smooth sidebar transitions, hover micro-interactions
-- 🔍 **Advanced filtering** — Combined search + type + category + date range + sort
-- 📱 **Responsive** — Works on mobile, tablet, and desktop
+- **Dashboard Overview** — Summary cards (balance, income, expenses, investments), monthly cash flow area chart, spending donut chart, and recent transactions
+- **Transactions Page** — Full table with search, filtering by type/category/date range, sorting by date or amount, and CSV export
+- **Insights Page** — Top spending category, savings rate, expense ratio, month-over-month comparison charts, and smart observations based on your data
+- **Role-Based UI** — Switch between `Viewer` (read-only) and `Admin` (full CRUD) via the sidebar
+- **Data Persistence** — Transactions and role are saved to localStorage so nothing is lost on refresh
+- **Responsive** — Works on mobile, tablet, and desktop
+- **Animations** — Staggered fade-in cards, smooth sidebar transitions, hover micro-interactions
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer         | Tech                          |
-|---------------|-------------------------------|
-| Framework     | React 18                      |
-| State         | Redux Toolkit + React-Redux   |
-| Styling       | Tailwind CSS v3               |
-| Charts        | Recharts                      |
-| Icons         | Lucide React                  |
-| Date utils    | date-fns                      |
-| Build tool    | Vite                          |
+| Layer      | Tech                        |
+| ---------- | --------------------------- |
+| Framework  | React 18                    |
+| State      | Redux Toolkit + React-Redux |
+| Styling    | Tailwind CSS v3             |
+| Charts     | Recharts                    |
+| Icons      | Lucide React                |
+| Date utils | date-fns                    |
+| Build tool | Vite                        |
 
 ---
 
 ## 🚀 Getting Started
 
 ```bash
-# 1. Install dependencies
+# 1. Clone the repo
+git clone https://github.com/YOUR_USERNAME/finvault.git
+cd finvault
+
+# 2. Install dependencies
 npm install
 
-# 2. Start dev server
+# 3. Start dev server
 npm run dev
 
-# 3. Open in browser
+# 4. Open in browser
 # http://localhost:5173
 ```
 
@@ -79,23 +80,16 @@ src/
 
 ## 🔐 Role-Based UI
 
-| Feature             | Viewer | Admin |
-|---------------------|--------|-------|
-| View dashboard      | ✅     | ✅    |
-| View transactions   | ✅     | ✅    |
-| View insights       | ✅     | ✅    |
-| Add transaction     | ❌     | ✅    |
-| Edit transaction    | ❌     | ✅    |
-| Delete transaction  | ❌     | ✅    |
-| Export CSV          | ✅     | ✅    |
+| Feature            | Viewer | Admin |
+| ------------------ | ------ | ----- |
+| View dashboard     | ✅     | ✅    |
+| View transactions  | ✅     | ✅    |
+| View insights      | ✅     | ✅    |
+| Add transaction    | ❌     | ✅    |
+| Edit transaction   | ❌     | ✅    |
+| Delete transaction | ❌     | ✅    |
+| Export CSV         | ✅     | ✅    |
 
-Switch roles using the sidebar role switcher (bottom). Role persists via localStorage.
+Switch roles using the switcher at the bottom of the sidebar. Role persists via localStorage.
 
 ---
-
-## 💡 Assumptions
-
-- All amounts are in **Indian Rupees (₹)**
-- Mock data spans ~6 months with realistic Indian expense categories
-- "Investment" is treated as a separate type (not income, not expense)
-- No backend — all state is in Redux with localStorage persistence
