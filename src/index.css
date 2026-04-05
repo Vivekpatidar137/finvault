@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-navy-950 text-slate-100 font-sans antialiased;
+    min-height: 100dvh;
+  }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { @apply bg-navy-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-navy-600 rounded-full; }
+}
+
+@layer components {
+  .card {
+    @apply bg-navy-900 border border-navy-700/60 rounded-2xl p-5 relative overflow-hidden;
+  }
+  .card-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl pointer-events-none;
+    background: radial-gradient(600px circle at var(--x,50%) var(--y,50%), rgba(0,212,255,.05), transparent 60%);
+  }
+  .stat-value {
+    @apply font-mono text-2xl font-semibold tracking-tight;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer;
+  }
+  .btn-primary {
+    @apply btn bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/30 hover:bg-accent-cyan/20 hover:border-accent-cyan/60;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-slate-400 hover:text-slate-100 hover:bg-navy-800;
+  }
+  .input {
+    @apply bg-navy-800 border border-navy-600 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500
+           focus:outline-none focus:border-accent-cyan/50 focus:ring-1 focus:ring-accent-cyan/20 transition-all;
+  }
+  .select {
+    @apply input appearance-none cursor-pointer;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-150 cursor-pointer;
+  }
+  .nav-item-active {
+    @apply nav-item bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20;
+  }
+  .nav-item-inactive {
+    @apply nav-item text-slate-400 hover:text-slate-100 hover:bg-navy-800;
+  }
+  .tag-income  { @apply badge bg-accent-green/10  text-accent-green  border border-accent-green/20; }
+  .tag-expense { @apply badge bg-accent-red/10    text-accent-red    border border-accent-red/20; }
+  .tag-saving  { @apply badge bg-accent-cyan/10   text-accent-cyan   border border-accent-cyan/20; }
+  .tag-invest  { @apply badge bg-accent-purple/10 text-accent-purple border border-accent-purple/20; }
+}
